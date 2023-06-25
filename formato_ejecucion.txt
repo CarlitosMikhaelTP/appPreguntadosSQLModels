@@ -1,0 +1,10 @@
+Especialidades
+Ciclo
+Curso
+Modulo
+Respuestas
+Grupo
+Rol
+Usuarios
+Preguntas
+Partida
