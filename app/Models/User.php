@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -71,18 +72,13 @@ class User extends Authenticatable
         return $this->belongsTo('App\Models\Profesor','id_usuario','id_usuario');
     }
 
-    public function especialidad(): HasOne
+    public function comite(): BelongsTo
     {
-        return $this->hasOne('App\Models\Especialidad','id_especialidad','id_especialidad');
+        return $this->belongsTo('App\Models\Comite','id_usuario','id_usuario');
     }
 
-    public function ciclo(): HasOne
+    public function rol(): BelongsToMany
     {
-        return $this->hasOne('App\Models\Ciclo','id_ciclo','id_ciclo');
-    }
-
-    public function curso(): HasOne
-    {
-        return $this->hasOne('App\Models\Curso','id_curso','id_curso');
+        return $this->belongsToMany('App\Models\Rol','rol_user','id_usuario','id_rol');
     }
 }

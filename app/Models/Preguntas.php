@@ -23,9 +23,9 @@ class Preguntas extends Model
         return $this->belongsTo('App\Models\Especialidad','id_especialidad','id_especialidad');
     }
 
-    public function curso()
+    public function modulo()
     {
-        return $this->belongsTo('App\Models\Curso','id_curso','id_curso');
+        return $this->belongsTo('App\Models\modulo','id_modulo','id_modulo');
     }
 
     public function ciclo()
@@ -33,8 +33,13 @@ class Preguntas extends Model
         return $this->belongsTo('App\Models\Ciclo','id_ciclo','id_ciclo');
     }
 
-    public function modulo()
+    public function curso()
     {
-        return $this->belongsTo('App\Models\Modulo','id_modulo','id_modulo');
+        return $this->belongsTo('App\Models\Curso','id_curso','id_curso');
+    }
+
+    public function respuesta()
+    {
+        return $this->belongsTo('App\Models\Respuestas','id_respuestas','id_respuestas');
     }
 }
