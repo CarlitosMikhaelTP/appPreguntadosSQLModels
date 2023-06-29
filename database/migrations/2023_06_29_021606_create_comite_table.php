@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('usuario_rol', function (Blueprint $table) {
-            $table->unsignedBigInteger('id_usuario')->unsigned();
+        Schema::create('comite', function (Blueprint $table) {
+            $table->id()->primary();
+            $table->string('nombre');
+            $table->string('apellido');
+            $table->unsignedBigInteger('id_usuario');
             $table->foreign('id_usuario')->references('id_usuario')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->unsignedBigInteger('id_rol')->unsigned();
-            $table->foreign('id_rol')->references('id_rol')->on('rol')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -25,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('usuario_rol');
+        Schema::dropIfExists('comite');
     }
 };
