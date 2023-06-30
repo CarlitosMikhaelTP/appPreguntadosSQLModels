@@ -15,8 +15,6 @@ return new class extends Migration
             $table->id('id_pregunta');
             $table->string('pregunta');
             $table->string('estado');
-            $table->unsignedBigInteger('id_respuesta')->unsigned();
-            $table->foreign('id_respuesta')->references('id_respuesta')->on('respuestas')->onUpdate('cascade')->onDelete('cascade');
             $table->unsignedBigInteger('id_especialidad')->unsigned();
             $table->foreign('id_especialidad')->references('id_especialidad')->on('especialidades')->onUpdate('cascade')->onDelete('cascade');
             $table->unsignedBigInteger('id_ciclo')->unsigned();

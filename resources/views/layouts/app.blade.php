@@ -34,6 +34,7 @@
 
             <!-- Page Content -->
             <main>
+                <h1>asdasd</h1>
                 {{ $slot }}
             </main>
         </div>

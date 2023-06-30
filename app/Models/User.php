@@ -61,24 +61,4 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
-
-    public function alumno(): BelongsTo
-    {
-        return $this->belongsTo('App\Models\Alumno','id_usuario','id_usuario');
-    }
-
-    public function profesor(): BelongsTo
-    {
-        return $this->belongsTo('App\Models\Profesor','id_usuario','id_usuario');
-    }
-
-    public function comite(): BelongsTo
-    {
-        return $this->belongsTo('App\Models\Comite','id_usuario','id_usuario');
-    }
-
-    public function rol(): BelongsToMany
-    {
-        return $this->belongsToMany('App\Models\Rol','rol_user','id_usuario','id_rol');
-    }
 }

@@ -2,20 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Preguntas;
-use App\Models\Respuestas;
-use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
-class RespuestaController extends Controller
+class RespuestasController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $respuestas = Respuestas::all();
-        return view('preguntas_respuestas.respuestas.index',compact('respuestas'));
+        return view('preguntas_respuestas.respuestas.index');
     }
 
     /**
@@ -23,7 +19,7 @@ class RespuestaController extends Controller
      */
     public function create()
     {
-        return view('preguntas_respuestas.respuestas.create');
+        return view ('preguntas_respuestas.respuestas.create');
     }
 
     /**
@@ -31,12 +27,7 @@ class RespuestaController extends Controller
      */
     public function store(Request $request)
     {
-        $preguntas = Preguntas::findOrFail($request->id_respuesta);
-        $preguntas->respuesta()->create([
-            'pregunta' => $request->pregunta,
-            'estado' => $request->estado
-        ]);
-        return redirect('/preguntas')->with('message','Pregunta agregada');
+        //
     }
 
     /**

@@ -12,6 +12,7 @@ class Respuestas extends Model
     use HasFactory;
 
     protected $fillable = [
+        'id_pregunta',
         'respuesta',
         'estado'
     ];

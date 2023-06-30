@@ -14,7 +14,9 @@ return new class extends Migration
         Schema::create('respuestas', function (Blueprint $table) {
             $table->id('id_respuesta');
             $table->string('respuesta');
-            $table->boolean('estado')->default(false);
+            $table->integer('estado')->default(0);
+            $table->unsignedBigInteger('id_pregunta')->unsigned();
+            $table->foreign('id_pregunta')->references('id_pregunta')->on('preguntas')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }
