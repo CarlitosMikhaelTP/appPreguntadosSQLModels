@@ -12,14 +12,14 @@ class Respuestas extends Model
     use HasFactory;
 
     protected $fillable = [
-        'respuestas',
+        'respuesta',
         'estado'
     ];
 
-    public function preguntas(): HasMany
-    {
-        return $this->hasMany('App\Models\Preguntas','id_respuesta','id_respuesta');
-    }
+    // public function preguntas(): BelongsTo
+    // {
+    //     return $this->belongsTo('App\Models\Preguntas','id_respuesta','id_respuesta');
+    // }
 
 
 }

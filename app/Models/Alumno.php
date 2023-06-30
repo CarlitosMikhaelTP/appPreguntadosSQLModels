@@ -10,8 +10,10 @@ class Alumno extends Model
     use HasFactory;
 
     protected $fillable = [
+        'id_usuario',
         'nombre',
         'apellido',
+
     ];
 
     public function usuario()

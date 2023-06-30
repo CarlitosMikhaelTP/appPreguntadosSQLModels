@@ -40,6 +40,6 @@ class Preguntas extends Model
 
     public function respuesta()
     {
-        return $this->belongsTo('App\Models\Respuestas','id_respuestas','id_respuestas');
+        return $this->hasMany('App\Models\Respuestas','id_respuestas','id_respuestas');
     }
 }
